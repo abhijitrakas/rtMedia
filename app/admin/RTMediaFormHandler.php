@@ -515,18 +515,6 @@ class RTMediaFormHandler {
 				),
 				'group'    => 100,
 			), //
-			'rtmedia_affiliate_id'  => array(
-				'title'         => esc_html__( 'Also add my affiliate-id to rtMedia footer link', 'buddypress-media' ),
-				'callback'      => array( 'RTMediaFormHandler', 'textbox' ),
-				'args'          => array(
-					'key'   => 'rtmedia_affiliate_id',
-					'value' => $options['rtmedia_affiliate_id'],
-					'desc'  => esc_html__( 'Add your affiliate-id along with footer link and get rewarded by our affiliation program.', 'buddypress-media' ),
-				),
-				'group'         => 100,
-				'depends'       => 'rtmedia_add_linkback',
-				'after_content' => esc_html__( 'Signup for', 'buddypress-media' ) . ' rtMedia ' . esc_html__( 'affiliate program', 'buddypress-media' ) . ' <a href="https://rtmedia.io/affiliates/">' . esc_html__( 'here', 'buddypress-media' ) . '</a>',
-			), //
 			'rtmedia_enable_api'    => array(
 				'title'         => esc_html__( 'Enable JSON API', 'buddypress-media' ),
 				'callback'      => array( 'RTMediaFormHandler', 'checkbox' ),
@@ -619,7 +607,7 @@ class RTMediaFormHandler {
 		/**
 		 * Filter 'rtmedia_export_import_add_itmes' to modify controls in export/import settings tab
 		 *
-		 * @since 4.4.8
+		 * @since 4.4.9
 		 */
 		$render_options          = apply_filters( 'rtmedia_export_import_add_itmes', $render_options );
 		$export_import_group     = array();
@@ -628,7 +616,7 @@ class RTMediaFormHandler {
 		/**
 		 * Filter 'rtmedia_export_import_groups' to modify groups in export/import settings tab
 		 *
-		 * @since 4.4.8
+		 * @since 4.4.9
 		 */
 		$export_import_group = apply_filters( 'rtmedia_export_import_groups', $export_import_group );
 		ksort( $export_import_group );
